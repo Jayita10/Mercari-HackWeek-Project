@@ -1,11 +1,12 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineReconciliation, AiOutlineHome, AiOutlineBarChart, AiOutlineLogout } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsEmojiLaughing, BsFillEyeFill , BsFillStarFill } from 'react-icons/bs';
-import { BiColorFill, BiLike } from 'react-icons/bi';
+import {  BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsEmojiLaughing, BsFillEyeFill , BsFillStarFill } from 'react-icons/bs';
+import { BiColorFill, BiLike  } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount, MdOutlineAttachMoney, MdAccountBalanceWallet, MdAssignment, MdAssignmentTurnedIn } from 'react-icons/md';
+import { MdOutlineSupervisorAccount, MdOutlineAttachMoney, MdAccountBalanceWallet, MdAssignment, MdAssignmentTurnedIn} from 'react-icons/md';
+
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
@@ -474,85 +475,24 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
-      },
-    ],
-  },
-
-  {
-    title: 'Pages',
-    links: [
-      {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
+        name: 'mainDashboard',
+        icon: < AiOutlineHome />,
       },
       {
-        name: 'employees',
-        icon: <IoMdContacts />,
-      },
-      {
-        name: 'customers',
-        icon: <RiContactsLine />,
-      },
-    ],
-  },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
+        name: 'itemAnalysis',
         icon: <AiOutlineBarChart />,
       },
       {
-        name: 'pie',
-        icon: <FiPieChart />,
+        name: 'listings',
+        icon: <AiOutlineReconciliation />,
       },
       {
-        name: 'financial',
-        icon: <RiStockLine />,
+        name: 'buyerReviews',
+        icon: <AiOutlineUser />,
       },
       {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
+        name: 'Logout',
+        icon: <AiOutlineLogout />,
       },
     ],
   },
@@ -616,7 +556,8 @@ export const chatData = [
 export const earningData = [
   {
     icon: <MdAccountBalanceWallet />,
-    amount: '39,354',
+
+    amount: '¥39,354',
     percentage: '-4%',
     title: 'Revenue',
     iconColor: '#03C9D7',
@@ -625,14 +566,15 @@ export const earningData = [
   },
   {
     icon: <MdOutlineAttachMoney />,
-    amount: '4,396',
+
+    amount: '¥4,396',
     percentage: '+23%',
     title: 'Profit',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
   },
-{
+  {
     icon: <MdAssignment />,
     amount: '42',
     percentage: '+38%',
@@ -647,6 +589,45 @@ export const earningData = [
     amount: '31',
     percentage: '-12%',
     title: 'Items sold',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+];
+
+export const performance = [
+  {
+    icon: <BsFillEyeFill />,
+    amount: '430',
+    percentage: '+15%',
+    title: 'Product Views/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: <BiLike />,
+    amount: '59',
+    percentage: '-17%',
+    title: 'Product Likes/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+  {
+    icon: <BsEmojiLaughing />,
+    amount: '5880',
+    percentage: '+7%',
+    title: 'Impressions/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: <BsFillStarFill />,
+    amount: '155',
+    percentage: '-12%',
+    title: 'Ratings',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -924,13 +905,13 @@ export const ordersGrid = [
     textAlign: 'Center',
   },
   { field: 'CustomerName',
-    headerText: 'Customer Name',
+    headerText: 'Buyer Name',
     width: '150',
     textAlign: 'Center',
   },
   {
     field: 'TotalAmount',
-    headerText: 'Total Amount',
+    headerText: 'Price',
     format: 'C2',
     textAlign: 'Center',
     editType: 'numericedit',
@@ -951,7 +932,7 @@ export const ordersGrid = [
   },
 
   {
-    field: 'Location',
+    field: 'Shipping Location',
     headerText: 'Location',
     width: '150',
     textAlign: 'Center',
@@ -3122,11 +3103,11 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 1, yval: 2 },
-  { x: 2, yval: 6 },
-  { x: 3, yval: 8 },
-  { x: 4, yval: 5 },
-  { x: 5, yval: 10 },
+  { x: 1, yval: 20 },
+  { x: 2, yval: 60 },
+  { x: 3, yval: 80 },
+  { x: 4, yval: 50 },
+  { x: 5, yval: 100 },
 
 ];
 
@@ -3219,7 +3200,7 @@ export const stackedCustomSeries = [
   { dataSource: stackedChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Budget',
+    name: 'Profit',
     type: 'StackingColumn',
     background: 'blue',
 
@@ -3228,7 +3209,7 @@ export const stackedCustomSeries = [
   { dataSource: stackedChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'Expense',
+    name: 'Revenue',
     type: 'StackingColumn',
     background: 'red',
 

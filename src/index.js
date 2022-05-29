@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 import App from "./App";
-import { ContextProvider } from "./contexts/ContextProvider";
+
+import{ContextProvider} from './contexts/ContextProvider';
 
 // to hook our react application with root 
 ReactDOM.render(
-    <ContextProvider>
-        <App />
-    </ContextProvider>, 
-    document.getElementById('root')
-);
+<ContextProvider>
+    <App />
+</ContextProvider>,
+document.getElementById('root'));

@@ -50,19 +50,21 @@ const Navbar = () => {
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
       <NavButton title='Menu' customFunc={() =>
-       setActiveMenu((preActiveMenu) => !preActiveMenu)} color='blue' icon={<AiOutlineMenu />} 
+
+       setActiveMenu((preActiveMenu) => !preActiveMenu)} color='#880ED4' icon={<AiOutlineMenu />} 
       />
       <div className='flex'>
         <NavButton title='Cart' 
-          customFunc={() => handleClick( 'cart' )} color='blue' icon={<FiShoppingCart />} 
+          customFunc={() => handleClick( 'cart' )} color='#880ED4' icon={<FiShoppingCart />} 
         />
 
-        <NavButton title='Chat' dotColor='#03C9D7' 
-          customFunc={() => handleClick( 'chat' )} color='blue' icon={<BsChatLeft />} 
+        <NavButton title='Chat' dotColor='#D7A1F9' 
+          customFunc={() => handleClick( 'chat' )} color='#880ED4' icon={<BsChatLeft />} 
         />
 
-        <NavButton title='Notifications' dotColor='#03C9D7'
-          customFunc={() => handleClick( 'notification' )} color='blue' icon={<RiNotification3Line />} 
+        <NavButton title='Notifications' dotColor='#D7A1F9'
+          customFunc={() => handleClick( 'notification' )} color='#880ED4' icon={<RiNotification3Line />} 
+
         />
         <TooltipComponent content='Profile' position='BottomCenter'>
         <div
