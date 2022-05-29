@@ -634,45 +634,6 @@ export const performance = [
   },
 ];
 
-export const performance = [
-  {
-    icon: <BsFillEyeFill />,
-    amount: '430',
-    percentage: '+15%',
-    title: 'Product Views/Day',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'green-600',
-  },
-  {
-    icon: <BiLike />,
-    amount: '59',
-    percentage: '-17%',
-    title: 'Product Likes/Day',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
-  },
-  {
-    icon: <BsEmojiLaughing />,
-    amount: '5880',
-    percentage: '+7%',
-    title: 'Impressions/Day',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'green-600',
-  },
-  {
-    icon: <BsFillStarFill />,
-    amount: '155',
-    percentage: '-12%',
-    title: 'Ratings',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
-  },
-]
-
 export const recentTransactions = [
   {
     icon: <BsCurrencyDollar />,
