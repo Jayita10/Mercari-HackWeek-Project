@@ -6,6 +6,7 @@ import { BiColorFill, BiLike  } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount, MdOutlineAttachMoney, MdAccountBalanceWallet, MdAssignment, MdAssignmentTurnedIn} from 'react-icons/md';
+
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
@@ -555,7 +556,8 @@ export const chatData = [
 export const earningData = [
   {
     icon: <MdAccountBalanceWallet />,
-    amount: '$39,354',
+
+    amount: '¥39,354',
     percentage: '-4%',
     title: 'Revenue',
     iconColor: '#03C9D7',
@@ -564,7 +566,8 @@ export const earningData = [
   },
   {
     icon: <MdOutlineAttachMoney />,
-    amount: '$4,396',
+
+    amount: '¥4,396',
     percentage: '+23%',
     title: 'Profit',
     iconColor: 'rgb(255, 244, 229)',
@@ -630,6 +633,45 @@ export const performance = [
     pcColor: 'red-600',
   },
 ];
+
+export const performance = [
+  {
+    icon: <BsFillEyeFill />,
+    amount: '430',
+    percentage: '+15%',
+    title: 'Product Views/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: <BiLike />,
+    amount: '59',
+    percentage: '-17%',
+    title: 'Product Likes/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+  {
+    icon: <BsEmojiLaughing />,
+    amount: '5880',
+    percentage: '+7%',
+    title: 'Impressions/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: <BsFillStarFill />,
+    amount: '155',
+    percentage: '-12%',
+    title: 'Ratings',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+]
 
 export const recentTransactions = [
   {
