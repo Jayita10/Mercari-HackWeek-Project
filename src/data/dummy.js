@@ -1,11 +1,11 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsEmojiLaughing, BsFillEyeFill , BsFillStarFill } from 'react-icons/bs';
+import { BiColorFill, BiLike } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { MdOutlineSupervisorAccount, MdOutlineAttachMoney, MdAccountBalanceWallet, MdAssignment, MdAssignmentTurnedIn } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
@@ -615,42 +615,82 @@ export const chatData = [
 
 export const earningData = [
   {
-    icon: <MdOutlineSupervisorAccount />,
-    amount: '3899',
+    icon: <MdAccountBalanceWallet />,
+    amount: '39,354',
     percentage: '-4%',
-    title: 'Customers',
+    title: 'Revenue',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
   },
   {
-    icon: <BsBoxSeam />,
-    amount: '4567',
-    percentage: '+13%',
-    title: 'Total Listings',
+    icon: <MdOutlineAttachMoney />,
+    amount: '4,396',
+    percentage: '+23%',
+    title: 'Profit',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
   },
-  {
-    icon: <FiBarChart />,
-    amount: '1945',
-    percentage: '+3%',
-    title: 'Active Listings',
+{
+    icon: <MdAssignment />,
+    amount: '42',
+    percentage: '+38%',
+    title: 'Item Listed',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
+
     pcColor: 'green-600',
   },
   {
-    icon: <HiOutlineRefresh />,
-    amount: '155',
+    icon: <MdAssignmentTurnedIn />,
+    amount: '31',
     percentage: '-12%',
-    title: 'Orders in Progress',
+    title: 'Items sold',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
   },
 ];
+
+export const performance = [
+  {
+    icon: <BsFillEyeFill />,
+    amount: '430',
+    percentage: '+15%',
+    title: 'Product Views/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: <BiLike />,
+    amount: '59',
+    percentage: '-17%',
+    title: 'Product Likes/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+  {
+    icon: <BsEmojiLaughing />,
+    amount: '5880',
+    percentage: '+7%',
+    title: 'Impressions/Day',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'green-600',
+  },
+  {
+    icon: <BsFillStarFill />,
+    amount: '155',
+    percentage: '-12%',
+    title: 'Ratings',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+]
 
 export const recentTransactions = [
   {
