@@ -1,16 +1,16 @@
 import React from 'react';
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
 
-import { ordersData, contextMenuItems, ordersGrid, employeesData, employeesGrid } from '../data/dummy';
+import { buyerReviewsData, buyerReviewsGrid } from '../data/dummy';
 import { Header } from '../components';
 
 const BuyerReview = () => {
   return (
     <div className='m-2 md:m-10 md:p-10 bg-white rounded-3xl'>
-      <Header category='Pages/Listings' title='Listing Status' />
-      <GridComponent id='gridcomp' dataSource={ordersData} allowPaging allowSorting>
+      <Header category='Pages/Reviews' title='Buyer Reviews' />
+      <GridComponent id='gridcomp' dataSource={buyerReviewsData} allowPaging allowSorting>
         <ColumnsDirective>
-          {ordersGrid.map((item, index) => (
+          {buyerReviewsGrid.map((item, index) => (
             <ColumnDirective key={index} {...item} />
           ))}
         </ColumnsDirective>

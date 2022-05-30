@@ -25,7 +25,7 @@ const Line = () => {
     </div>
 
     {/*Bar Chart*/}
-    <ChartsHeader category="Profit" title="Profit/Categories" />
+    <ChartsHeader category="Profit" title="% Profit per Categories" />
       <div className=" w-full">
         <BarChart />
       </div>
