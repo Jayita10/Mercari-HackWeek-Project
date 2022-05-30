@@ -477,14 +477,13 @@ export const links = [
       {
         name: 'Dashboard',
         icon: < AiOutlineHome />,
+      },      {
+        name: 'Analysis',
+        icon: <AiOutlineBarChart />,
       },
       {
         name: 'Listings',
         icon: <AiOutlineReconciliation />,
-      },
-      {
-        name: 'Analysis',
-        icon: <AiOutlineBarChart />,
       },
       {
         name: 'BuyerReviews',
