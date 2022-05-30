@@ -164,7 +164,7 @@ const Ecommerce = () => {
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
             <div>
               <p className="text-2xl font-semibold ">Ratings</p>
-              <p className="text-gray-400">Out of 5</p>
+              <p className="text-gray-400">Positive/Negative</p>
             </div>
 
             <div className="w-40">

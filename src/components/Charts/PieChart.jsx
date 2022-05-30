@@ -17,7 +17,7 @@ const PieChart = ({ id, data, legendVisiblity, height }) => {
       <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]} />
       <AccumulationSeriesCollectionDirective>
         <AccumulationSeriesDirective
-          name="Rating"
+          name="Status"
           dataSource={data}
           xName="x"
           yName="y"

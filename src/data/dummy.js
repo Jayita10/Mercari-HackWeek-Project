@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineUser, AiOutlineReconciliation, AiOutlineHome, AiOutlineBarChart, AiOutlineLogout } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import {  BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsEmojiLaughing, BsFillEyeFill , BsFillStarFill } from 'react-icons/bs';
+import {  BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsEmojiLaughing, BsFillEyeFill , BsFillStarFill, BsFillEmojiAngryFill, BsFillEmojiNeutralFill, BsFillEmojiSmileFill, BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill } from 'react-icons/bs';
 import { BiColorFill, BiLike  } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
@@ -344,7 +344,7 @@ export const rangeColorMapping = [
 export const ColorMappingPrimaryXAxis = {
   valueType: 'Category',
   majorGridLines: { width: 0 },
-  title: 'Months',
+  ItemID: 'Months',
 };
 
 export const ColorMappingPrimaryYAxis = {
@@ -352,7 +352,7 @@ export const ColorMappingPrimaryYAxis = {
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
   labelFormat: '{value}°C',
-  title: 'Temperature',
+  ItemID: 'Temperature',
 };
 
 export const FinancialPrimaryXAxis = {
@@ -364,7 +364,7 @@ export const FinancialPrimaryXAxis = {
 };
 
 export const FinancialPrimaryYAxis = {
-  title: 'Price',
+  ItemID: 'Price',
   minimum: 100,
   maximum: 180,
   interval: 20,
@@ -433,6 +433,31 @@ export const customersGrid = [
   },
 
 ];
+export const buyerReviewsGrid = [
+  { field: 'BuyerID',
+    headerText: 'BuyerID',
+    width: '125',
+    textAlign: 'Center' },
+  { field: 'Name',
+    headerText: 'Name',
+    width: '0',
+    textAlign: 'Center',
+  },
+  { field: 'ItemID',
+    headerText: 'Item-ID',
+    width: '170',
+    textAlign: 'Center',
+  },
+  { field: 'Ratings',
+    headerText: 'Ratings',
+    width: '135',
+    format: 'yMd',
+    textAlign: 'Center' },
+  { field: 'Reaction',
+    headerText: 'Reactions',
+    width: '120',
+    textAlign: 'Center' },
+];
 
 export const employeesGrid = [
   { headerText: 'Employee',
@@ -444,7 +469,7 @@ export const employeesGrid = [
     width: '0',
     textAlign: 'Center',
   },
-  { field: 'Title',
+  { field: 'ItemID',
     headerText: 'Designation',
     width: '170',
     textAlign: 'Center',
@@ -454,17 +479,17 @@ export const employeesGrid = [
     textAlign: 'Center',
     template: gridEmployeeCountry },
 
-  { field: 'HireDate',
+  { field: 'Ratings',
     headerText: 'Hire Date',
     width: '135',
     format: 'yMd',
     textAlign: 'Center' },
 
-  { field: 'ReportsTo',
+  { field: 'Reaction',
     headerText: 'Reports To',
     width: '120',
     textAlign: 'Center' },
-  { field: 'EmployeeID',
+  { field: 'BuyerID',
     headerText: 'Employee ID',
     width: '125',
     textAlign: 'Center' },
@@ -472,7 +497,7 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: 'Dashboard',
+    ItemID: 'Dashboard',
     links: [
       {
         name: 'Dashboard',
@@ -558,7 +583,7 @@ export const earningData = [
 
     amount: '15',
     percentage: '-4%',
-    title: 'Total Customers',
+    ItemID: 'Total Customers',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
@@ -568,7 +593,7 @@ export const earningData = [
 
     amount: '¥4,396',
     percentage: '+23%',
-    title: 'Profit',
+    ItemID: 'Profit',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
@@ -577,7 +602,7 @@ export const earningData = [
     icon: <MdAssignment />,
     amount: '100',
     percentage: '+38%',
-    title: 'Item Listed',
+    ItemID: 'Item Listed',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
 
@@ -587,7 +612,7 @@ export const earningData = [
     icon: <MdAssignmentTurnedIn />,
     amount: '15',
     percentage: '-12%',
-    title: 'Items sold',
+    ItemID: 'Items sold',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -599,7 +624,7 @@ export const performance = [
     icon: <BsFillEyeFill />,
     amount: '430',
     percentage: '+15%',
-    title: 'Product Views/Day',
+    ItemID: 'Product Views/Day',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'green-600',
@@ -608,7 +633,7 @@ export const performance = [
     icon: <BiLike />,
     amount: '59',
     percentage: '-17%',
-    title: 'Product Likes/Day',
+    ItemID: 'Product Likes/Day',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -617,7 +642,7 @@ export const performance = [
     icon: <BsEmojiLaughing />,
     amount: '5880',
     percentage: '+7%',
-    title: 'Impressions/Day',
+    ItemID: 'Impressions/Day',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'green-600',
@@ -626,7 +651,7 @@ export const performance = [
     icon: <BsFillStarFill />,
     amount: '155',
     percentage: '-12%',
-    title: 'Ratings',
+    ItemID: 'Ratings',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -637,7 +662,7 @@ export const recentTransactions = [
   {
     icon: <BsCurrencyDollar />,
     amount: '+$350',
-    title: 'Paypal Transfer',
+    ItemID: 'Paypal Transfer',
     desc: 'Money Added',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
@@ -647,7 +672,7 @@ export const recentTransactions = [
     icon: <BsShield />,
     amount: '-$560',
     desc: 'Bill Payment',
-    title: 'Wallet',
+    ItemID: 'Wallet',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -655,7 +680,7 @@ export const recentTransactions = [
   {
     icon: <FiCreditCard />,
     amount: '+$350',
-    title: 'Credit Card',
+    ItemID: 'Credit Card',
     desc: 'Money reversed',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
@@ -665,7 +690,7 @@ export const recentTransactions = [
   {
     icon: <TiTick />,
     amount: '+$350',
-    title: 'Bank Transfer',
+    ItemID: 'Bank Transfer',
     desc: 'Money Added',
 
     iconColor: 'rgb(228, 106, 118)',
@@ -676,7 +701,7 @@ export const recentTransactions = [
     icon: <BsCurrencyDollar />,
     amount: '-$50',
     percentage: '+38%',
-    title: 'Refund',
+    ItemID: 'Refund',
     desc: 'Payment Sent',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
@@ -688,7 +713,7 @@ export const weeklyStats = [
   {
     icon: <FiShoppingCart />,
     amount: '-$560',
-    title: 'Top Sales',
+    ItemID: 'Top Sales',
     desc: 'Johnathan Doe',
     iconBg: '#FB9678',
     pcColor: 'red-600',
@@ -696,7 +721,7 @@ export const weeklyStats = [
   {
     icon: <FiStar />,
     amount: '-$560',
-    title: 'Best Seller',
+    ItemID: 'Best Seller',
     desc: 'MaterialPro Admin',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'red-600',
@@ -704,7 +729,7 @@ export const weeklyStats = [
   {
     icon: <BsChatLeft />,
     amount: '+$560',
-    title: 'Most Commented',
+    ItemID: 'Most Commented',
     desc: 'Ample Admin',
     iconBg: '#00C292',
     pcColor: 'green-600',
@@ -715,7 +740,7 @@ export const productsPerformance = [
   {
     image:
       product5,
-    title: 'Is it good butterscotch ice-cream?',
+    ItemID: 'Is it good butterscotch ice-cream?',
     desc: 'Ice-Cream, Milk, Powder',
     rating: 'Good',
     itemSold: '65%',
@@ -724,7 +749,7 @@ export const productsPerformance = [
   {
     image:
       product6,
-    title: 'Supreme fresh tomato available',
+    ItemID: 'Supreme fresh tomato available',
     desc: 'Market, Mall',
     rating: 'Excellent',
     itemSold: '98%',
@@ -733,7 +758,7 @@ export const productsPerformance = [
   {
     image:
       product7,
-    title: 'Red color candy from Gucci',
+    ItemID: 'Red color candy from Gucci',
     desc: 'Chocolate, Yummy',
     rating: 'Average',
     itemSold: '46%',
@@ -742,7 +767,7 @@ export const productsPerformance = [
   {
     image:
       product4,
-    title: 'Stylish night lamp for night',
+    ItemID: 'Stylish night lamp for night',
     desc: 'Electric, Wire, Current',
     rating: 'Poor',
     itemSold: '23%',
@@ -753,15 +778,15 @@ export const productsPerformance = [
 export const medicalproBranding = {
   data: [
     {
-      title: 'Due Date',
+      ItemID: 'Due Date',
       desc: 'Oct 23, 2021',
     },
     {
-      title: 'Budget',
+      ItemID: 'Budget',
       desc: '$98,500',
     },
     {
-      title: 'Expense',
+      ItemID: 'Expense',
       desc: '$63,000',
     },
   ],
@@ -829,21 +854,21 @@ export const themeColors = [
 export const userProfileData = [
   {
     icon: <BsCurrencyDollar />,
-    title: 'My Profile',
+    ItemID: 'My Profile',
     desc: 'Account Settings',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
   },
   {
     icon: <BsShield />,
-    title: 'My Inbox',
+    ItemID: 'My Inbox',
     desc: 'Messages & Emails',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
   },
   {
     icon: <FiCreditCard />,
-    title: 'My Tasks',
+    ItemID: 'My Tasks',
     desc: 'To-do and Daily Tasks',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
@@ -859,13 +884,13 @@ export const ordersGrid = [
   },
   {
     field: 'OrderItems',
-    headerText: 'Item',
+    headerText: 'Item Name',
     width: '150',
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
   { field: 'Categories',
-    headerText: 'Buyer Name',
+    headerText: 'Category',
     width: '150',
     textAlign: 'Center',
   },
@@ -890,16 +915,10 @@ export const ordersGrid = [
     width: '120',
     textAlign: 'Center',
   },
-
-  {
-    field: 'Shipping Location',
-    headerText: 'Location',
-    width: '150',
-    textAlign: 'Center',
-  },
 ];
 
-export const customersData = [
+
+export const customerData = [
   {
     CustomerID: 1001,
     Categories: 'Nirav Joshi',
@@ -1459,6 +1478,429 @@ export const customersData = [
     Location: 'USA',
   },
 
+];
+
+export const buyerReviewsData = [
+  {
+    BuyerID: 1,
+    Name: 'Nancy Davolio',
+    ItemID: 156324,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 2,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45126,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 3,
+    Name: 'Iulia Albu',
+    ItemID: 16429,
+    Ratings: 2,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 4,
+    Name: 'Siegbert Gottfried',
+    ItemID: 65234,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 5,
+    Name: 'Omar Darobe',
+    ItemID: 96234,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 6,
+    Name: 'Penjani Inyene',
+    ItemID: 63245,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 7,
+    Name: 'Miron Vitold',
+    ItemID: 74563,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 8,
+    Name: 'Nancy Davolio',
+    ItemID: 95482,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 9,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45123,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 10,
+    Name: 'Iulia Albu',
+    ItemID: 12934,
+    Ratings: 1,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 1,
+    Name: 'Nancy Davolio',
+    ItemID: 156324,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 2,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45126,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 3,
+    Name: 'Iulia Albu',
+    ItemID: 16429,
+    Ratings: 2,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 4,
+    Name: 'Siegbert Gottfried',
+    ItemID: 65234,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 5,
+    Name: 'Omar Darobe',
+    ItemID: 96234,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 6,
+    Name: 'Penjani Inyene',
+    ItemID: 63245,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 7,
+    Name: 'Miron Vitold',
+    ItemID: 74563,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 8,
+    Name: 'Nancy Davolio',
+    ItemID: 95482,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 9,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45123,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 10,
+    Name: 'Iulia Albu',
+    ItemID: 12934,
+    Ratings: 1,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 1,
+    Name: 'Nancy Davolio',
+    ItemID: 156324,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 2,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45126,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 3,
+    Name: 'Iulia Albu',
+    ItemID: 16429,
+    Ratings: 2,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 4,
+    Name: 'Siegbert Gottfried',
+    ItemID: 65234,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 5,
+    Name: 'Omar Darobe',
+    ItemID: 96234,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 6,
+    Name: 'Penjani Inyene',
+    ItemID: 63245,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 7,
+    Name: 'Miron Vitold',
+    ItemID: 74563,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 8,
+    Name: 'Nancy Davolio',
+    ItemID: 95482,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 9,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45123,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 10,
+    Name: 'Iulia Albu',
+    ItemID: 12934,
+    Ratings: 1,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 1,
+    Name: 'Nancy Davolio',
+    ItemID: 156324,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 2,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45126,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 3,
+    Name: 'Iulia Albu',
+    ItemID: 16429,
+    Ratings: 2,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 4,
+    Name: 'Siegbert Gottfried',
+    ItemID: 65234,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 5,
+    Name: 'Omar Darobe',
+    ItemID: 96234,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 6,
+    Name: 'Penjani Inyene',
+    ItemID: 63245,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 7,
+    Name: 'Miron Vitold',
+    ItemID: 74563,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 8,
+    Name: 'Nancy Davolio',
+    ItemID: 95482,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 9,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45123,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 10,
+    Name: 'Iulia Albu',
+    ItemID: 12934,
+    Ratings: 1,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 1,
+    Name: 'Nancy Davolio',
+    ItemID: 156324,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 2,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45126,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 3,
+    Name: 'Iulia Albu',
+    ItemID: 16429,
+    Ratings: 2,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 4,
+    Name: 'Siegbert Gottfried',
+    ItemID: 65234,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 5,
+    Name: 'Omar Darobe',
+    ItemID: 96234,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 6,
+    Name: 'Penjani Inyene',
+    ItemID: 63245,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 7,
+    Name: 'Miron Vitold',
+    ItemID: 74563,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 8,
+    Name: 'Nancy Davolio',
+    ItemID: 95482,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 9,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45123,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 10,
+    Name: 'Iulia Albu',
+    ItemID: 12934,
+    Ratings: 1,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 1,
+    Name: 'Nancy Davolio',
+    ItemID: 156324,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 2,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45126,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 3,
+    Name: 'Iulia Albu',
+    ItemID: 16429,
+    Ratings: 2,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
+  {
+    BuyerID: 4,
+    Name: 'Siegbert Gottfried',
+    ItemID: 65234,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 5,
+    Name: 'Omar Darobe',
+    ItemID: 96234,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 6,
+    Name: 'Penjani Inyene',
+    ItemID: 63245,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 7,
+    Name: 'Miron Vitold',
+    ItemID: 74563,
+    Ratings: 5,
+    Reaction: <BsFillEmojiHeartEyesFill />,
+  },
+  {
+    BuyerID: 8,
+    Name: 'Nancy Davolio',
+    ItemID: 95482,
+    Ratings: 4,
+    Reaction: <BsFillEmojiSmileFill />,
+  },
+  {
+    BuyerID: 9,
+    Name: 'Nasimiyu Danai',
+    ItemID: 45123,
+    Ratings: 3,
+    Reaction: <BsFillEmojiNeutralFill />,
+  },
+  {
+    BuyerID: 10,
+    Name: 'Iulia Albu',
+    ItemID: 12934,
+    Ratings: 1,
+    Reaction: <BsFillEmojiFrownFill />,
+  },
 ];
 
 export const employeesData = [
@@ -2104,11 +2546,9 @@ export const employeesData = [
 export const ordersData = [
   {
     OrderID: 10248,
-    Categories: 'Vinet',
-
+    Categories: 'Foods',
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2116,10 +2556,9 @@ export const ordersData = [
   },
   {
     OrderID: 345653,
-    Categories: 'Carson Darrin',
+    Categories: 'Kitchenware',
     TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
+    OrderItems: 'Cups',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2127,21 +2566,19 @@ export const ordersData = [
   },
   {
     OrderID: 390457,
-    Categories: 'Fran Perez',
+    Categories: 'Accessories',
     TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
+    OrderItems: 'Sunglasses',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      product7,
+      product2,
   },
   {
     OrderID: 893486,
-    Categories: 'Anika Viseer',
+    Categories: 'Fashion',
     TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
+    OrderItems: 'Shoes',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2149,10 +2586,9 @@ export const ordersData = [
   },
   {
     OrderID: 748975,
-    Categories: 'Miron Vitold',
+    Categories: 'Toys',
     TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
+    OrderItems: 'Toy Car',
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
@@ -2160,10 +2596,9 @@ export const ordersData = [
   },
   {
     OrderID: 94757,
-    Categories: 'Omar Darobe',
+    Categories: 'Accessories',
     TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    OrderItems: 'Sunglasses',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2171,10 +2606,9 @@ export const ordersData = [
   },
   {
     OrderID: 944895,
-    Categories: 'Lulia albu',
+    Categories: 'Accessories',
     TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
+    OrderItems: 'Watch',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2182,10 +2616,9 @@ export const ordersData = [
   },
   {
     OrderID: 845954,
-    Categories: 'Penjani',
+    Categories: 'Fashion',
     TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
+    OrderItems: 'Shoes',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2193,10 +2626,9 @@ export const ordersData = [
   },
   {
     OrderID: 845954,
-    Categories: 'Jie Yan',
+    Categories: 'Fashion',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2204,10 +2636,9 @@ export const ordersData = [
   },
   {
     OrderID: 874534,
-    Categories: 'Danai',
+    Categories: 'Accessories',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2215,27 +2646,27 @@ export const ordersData = [
   },
   {
     OrderID: 38489,
-    Categories: 'Miron',
+    Categories: 'Music',
     TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
+    OrderItems: 'Record Player',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+    'https://images.freeimages.com/images/large-previews/1d2/music-nightclub-1420666.jpg',
   },
   {
     OrderID: 24546,
-    Categories: 'Frank',
+    Categories: 'Fashion',
     TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
+    OrderItems: 'Shirt',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
   },
   {
     OrderID: 874534,
-    Categories: 'Danai',
+    Categories: 'Accessories',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
     Status: 'canceled',
@@ -2245,23 +2676,23 @@ export const ordersData = [
   },
   {
     OrderID: 10248,
-    Categories: 'Foods',
+    Categories: 'Accessories',
     TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
+    OrderItems: 'Earrings',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      product6,
+      'https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
   },
   {
     OrderID: 345653,
-    Categories: 'Foods',
+    Categories: 'Fashion',
     TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
+    OrderItems: 'T-Shirt',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      product5,
+      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80',
   },
   {
     OrderID: 390457,
@@ -2374,87 +2805,10 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 10248,
-    Categories: 'Vinet',
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    Categories: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
-  },
-  {
-    OrderID: 390457,
-    Categories: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    Categories: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    Categories: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    Categories: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    Categories: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
     OrderID: 845954,
-    Categories: 'Penjani',
+    Categories: 'Fashion',
     TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
+    OrderItems: 'Shoes',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2462,10 +2816,9 @@ export const ordersData = [
   },
   {
     OrderID: 845954,
-    Categories: 'Jie Yan',
+    Categories: 'Fashion',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2473,10 +2826,9 @@ export const ordersData = [
   },
   {
     OrderID: 874534,
-    Categories: 'Danai',
+    Categories: 'Accessories',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2484,32 +2836,29 @@ export const ordersData = [
   },
   {
     OrderID: 38489,
-    Categories: 'Miron',
+    Categories: 'Music',
     TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
+    OrderItems: 'Record Player',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+    'https://images.freeimages.com/images/large-previews/1d2/music-nightclub-1420666.jpg',
   },
   {
     OrderID: 24546,
-    Categories: 'Frank',
+    Categories: 'Fashion',
     TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
+    OrderItems: 'Shirt',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
   },
   {
     OrderID: 874534,
-    Categories: 'Danai',
+    Categories: 'Accessories',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2517,44 +2866,39 @@ export const ordersData = [
   },
   {
     OrderID: 10248,
-    Categories: 'Vinet',
-
+    Categories: 'Accessories',
     TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    OrderItems: 'Earrings',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      product6,
+      'https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
   },
   {
     OrderID: 345653,
-    Categories: 'Carson Darrin',
+    Categories: 'Fashion',
     TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
+    OrderItems: 'T-Shirt',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      product5,
+      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80',
   },
   {
     OrderID: 390457,
-    Categories: 'Fran Perez',
+    Categories: 'Accessories',
     TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
+    OrderItems: 'Sunglasses',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      product7,
+      product2,
   },
   {
     OrderID: 893486,
-    Categories: 'Anika Viseer',
+    Categories: 'Fashion',
     TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
+    OrderItems: 'Shoes',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2562,10 +2906,9 @@ export const ordersData = [
   },
   {
     OrderID: 748975,
-    Categories: 'Miron Vitold',
+    Categories: 'Toys',
     TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
+    OrderItems: 'Toy Car',
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
@@ -2573,10 +2916,9 @@ export const ordersData = [
   },
   {
     OrderID: 94757,
-    Categories: 'Omar Darobe',
+    Categories: 'Accessories',
     TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    OrderItems: 'Sunglasses',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2584,10 +2926,9 @@ export const ordersData = [
   },
   {
     OrderID: 944895,
-    Categories: 'Lulia albu',
+    Categories: 'Accessories',
     TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
+    OrderItems: 'Watch',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2595,10 +2936,9 @@ export const ordersData = [
   },
   {
     OrderID: 845954,
-    Categories: 'Penjani',
+    Categories: 'Fashion',
     TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
+    OrderItems: 'Shoes',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2606,10 +2946,9 @@ export const ordersData = [
   },
   {
     OrderID: 845954,
-    Categories: 'Jie Yan',
+    Categories: 'Fashion',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2617,10 +2956,9 @@ export const ordersData = [
   },
   {
     OrderID: 874534,
-    Categories: 'Danai',
+    Categories: 'Accessories',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2628,181 +2966,35 @@ export const ordersData = [
   },
   {
     OrderID: 38489,
-    Categories: 'Miron',
+    Categories: 'Toys',
     TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
+    OrderItems: 'Toy Car',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+      product1,
   },
   {
     OrderID: 24546,
-    Categories: 'Frank',
+    Categories: 'Kitchenware',
     TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    Categories: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 10248,
-    Categories: 'Vinet',
-
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    Categories: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
+    OrderItems: 'Cups',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
       product5,
   },
   {
-    OrderID: 390457,
-    Categories: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    Categories: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    Categories: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    Categories: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    Categories: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    Categories: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 845954,
-    Categories: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
     OrderID: 874534,
-    Categories: 'Danai',
+    Categories: 'Accessories',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
-  {
-    OrderID: 38489,
-    Categories: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    Categories: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    Categories: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
+  
 ];
 
 export const scheduleData = [
@@ -3082,7 +3274,7 @@ export const lineCustomSeries = [
 export const pieChartData = [
   { x: 'Products Unsold', y: 18, text: '75%' },
   { x: 'Products Sold', y: 8, text: '15%' },
-  { x: 'Products In-Progress', y: 10, text: '10%' },
+  { x: 'Orders In-Progress', y: 10, text: '10%' },
 ];
 
 export const contextMenuItems = [
@@ -3105,11 +3297,8 @@ export const contextMenuItems = [
 ];
 
 export const ecomPieChartData = [
-  { x: '1', y: 12, text: '35%' },
-  { x: '2', y: 13, text: '15%' },
-  { x: '3', y: 30, text: '25%' },
-  { x: '4', y: 45, text: '25%' },
-  { x: '5', y: 50, text: '25%' },
+  { x: 'Positive', y: 80, text: '80%' },
+  { x: 'Negative', y: 20, text: '20%' },
 ];
 
 export const stackedChartData = [
@@ -3181,7 +3370,7 @@ export const stackedPrimaryYAxis = {
 export const kanbanData = [
   {
     Id: 'Task 1',
-    Title: 'Task - 29001',
+    ItemID: 'Task - 29001',
     Status: 'Open',
     Summary: 'Analyze the new requirements gathered from the customer.',
     Type: 'Story',
@@ -3195,7 +3384,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 2',
-    Title: 'Task - 29002',
+    ItemID: 'Task - 29002',
     Status: 'InProgress',
     Summary: 'Improve application performance',
     Type: 'Improvement',
@@ -3209,7 +3398,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 3',
-    Title: 'Task - 29003',
+    ItemID: 'Task - 29003',
     Status: 'Open',
     Summary: 'Arrange a web meeting with the customer to get new requirements.',
     Type: 'Others',
@@ -3223,7 +3412,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 4',
-    Title: 'Task - 29004',
+    ItemID: 'Task - 29004',
     Status: 'InProgress',
     Summary: 'Fix the issues reported in the IE browser.',
     Type: 'Bug',
@@ -3237,7 +3426,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 5',
-    Title: 'Task - 29005',
+    ItemID: 'Task - 29005',
     Status: 'Review',
     Summary: 'Fix the issues reported by the customer.',
     Type: 'Bug',
@@ -3251,7 +3440,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 6',
-    Title: 'Task - 29007',
+    ItemID: 'Task - 29007',
     Status: 'Validate',
     Summary: 'Validate new requirements',
     Type: 'Improvement',
@@ -3265,7 +3454,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 7',
-    Title: 'Task - 29009',
+    ItemID: 'Task - 29009',
     Status: 'Review',
     Summary: 'Fix the issues reported in Safari browser.',
     Type: 'Bug',
@@ -3279,7 +3468,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 8',
-    Title: 'Task - 29010',
+    ItemID: 'Task - 29010',
     Status: 'Close',
     Summary: 'Test the application in the IE browser.',
     Type: 'Story',
@@ -3293,7 +3482,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 9',
-    Title: 'Task - 29011',
+    ItemID: 'Task - 29011',
     Status: 'Validate',
     Summary: 'Validate the issues reported by the customer.',
     Type: 'Story',
@@ -3307,7 +3496,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 10',
-    Title: 'Task - 29015',
+    ItemID: 'Task - 29015',
     Status: 'Open',
     Summary: 'Show the retrieved data from the server in grid control.',
     Type: 'Story',
@@ -3321,7 +3510,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 11',
-    Title: 'Task - 29016',
+    ItemID: 'Task - 29016',
     Status: 'InProgress',
     Summary: 'Fix cannot open user’s default database SQL error.',
     Priority: 'Critical',
@@ -3335,7 +3524,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 12',
-    Title: 'Task - 29017',
+    ItemID: 'Task - 29017',
     Status: 'Review',
     Summary: 'Fix the issues reported in data binding.',
     Type: 'Story',
@@ -3349,7 +3538,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 13',
-    Title: 'Task - 29018',
+    ItemID: 'Task - 29018',
     Status: 'Close',
     Summary: 'Analyze SQL server 2008 connection.',
     Type: 'Story',
@@ -3363,7 +3552,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 14',
-    Title: 'Task - 29019',
+    ItemID: 'Task - 29019',
     Status: 'Validate',
     Summary: 'Validate databinding issues.',
     Type: 'Story',
@@ -3377,7 +3566,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 15',
-    Title: 'Task - 29020',
+    ItemID: 'Task - 29020',
     Status: 'Close',
     Summary: 'Analyze grid control.',
     Type: 'Story',
@@ -3391,7 +3580,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 16',
-    Title: 'Task - 29021',
+    ItemID: 'Task - 29021',
     Status: 'Close',
     Summary: 'Stored procedure for initial data binding of the grid.',
     Type: 'Others',
@@ -3405,7 +3594,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 17',
-    Title: 'Task - 29022',
+    ItemID: 'Task - 29022',
     Status: 'Close',
     Summary: 'Analyze stored procedures.',
     Type: 'Story',
@@ -3419,7 +3608,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 18',
-    Title: 'Task - 29023',
+    ItemID: 'Task - 29023',
     Status: 'Validate',
     Summary: 'Validate editing issues.',
     Type: 'Story',
@@ -3433,7 +3622,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 19',
-    Title: 'Task - 29024',
+    ItemID: 'Task - 29024',
     Status: 'Review',
     Summary: 'Test editing functionality.',
     Type: 'Story',
@@ -3447,7 +3636,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 20',
-    Title: 'Task - 29025',
+    ItemID: 'Task - 29025',
     Status: 'Open',
     Summary: 'Enhance editing functionality.',
     Type: 'Improvement',
@@ -3461,7 +3650,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 21',
-    Title: 'Task - 29026',
+    ItemID: 'Task - 29026',
     Status: 'InProgress',
     Summary: 'Improve the performance of the editing functionality.',
     Type: 'Epic',
@@ -3475,7 +3664,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 22',
-    Title: 'Task - 29027',
+    ItemID: 'Task - 29027',
     Status: 'Open',
     Summary: 'Arrange web meeting with the customer to show editing demo.',
     Type: 'Others',
@@ -3489,7 +3678,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 23',
-    Title: 'Task - 29029',
+    ItemID: 'Task - 29029',
     Status: 'Review',
     Summary: 'Fix the editing issues reported by the customer.',
     Type: 'Bug',
@@ -3503,7 +3692,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 24',
-    Title: 'Task - 29030',
+    ItemID: 'Task - 29030',
     Status: 'Testing',
     Summary: 'Fix the issues reported by the customer.',
     Type: 'Bug',
@@ -3517,7 +3706,7 @@ export const kanbanData = [
   },
   {
     Id: 'Task 25',
-    Title: 'Task - 29031',
+    ItemID: 'Task - 29031',
     Status: 'Testing',
     Summary: 'Fix the issues reported in Safari browser.',
     Type: 'Bug',
@@ -3530,6 +3719,8 @@ export const kanbanData = [
     ClassName: 'e-bug, e-release, e-nancy-davloio',
   },
 ];
+
+
 
 export const financialChartData = [
   {
