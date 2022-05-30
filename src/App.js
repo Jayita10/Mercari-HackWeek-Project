@@ -58,10 +58,10 @@ const App = () => {
                         {/* Dashboard */}
                         <Route path='/' element={<Ecommerce />} />
                         <Route path='/Dashboard' element={<Ecommerce />} />
-                        <Route path='/listings' element={<Orders />} />
-                        <Route path='/itemAnalysis' element={<Line />} />
-                        <Route path='/buyerReview' element={<BuyerReview />} />
-
+                        <Route path='/Listings' element={<Orders />} />
+                        <Route path='/Analysis' element={<Line />} />
+                        <Route path='/BuyerReview' element={<BuyerReview />} />
+                        <Route path='/Logout' element={'Logout'}/>
                     </Routes>
                 </div>
                 <Footer />

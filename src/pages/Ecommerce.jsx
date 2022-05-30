@@ -11,14 +11,20 @@ import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
 import { Header } from '../components';
 
+
+
 const Ecommerce = () => {
   const { currentColor } = useStateContext();
+  
   return (
     <div className='mt-12'>
       <div className='m-2 md:m-10 md:p-10 bg-white rounded-3xl'>
         <Header category='Pages/Dashboard' title='Main Dashboard' />
-          <p>< BsArrowDownRightCircleFill />Quick Overview</p>
-          {/* <p className=''>Quick Overview</p> */}
+          {/* <p>Quick Overview< BsArrowDownRightCircleFill /></p> */}
+          <BsArrowDownRightCircleFill/>
+          <span className='text-lg font-semibold'>
+                   Quick Overview 
+          </span>
           <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
             {earningData.map((item) => (
               <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl'>
@@ -59,8 +65,9 @@ const Ecommerce = () => {
             ))}
           </div>
 
+          <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
           <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-no-repeat bg-cover bg-center'>
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-left items-center'>
               <div>
                 <p className='font-bold text-gray-400'>Earnings</p>
                 <p className='text-2xl'>$63,448.78</p>
@@ -76,7 +83,8 @@ const Ecommerce = () => {
                 />
               </div>
             </div>
-      </div>
+            </div>
+      
 
       {/*Revenue section*/}
       <div className="flex gap-10 flex-wrap justify-center">
@@ -133,6 +141,7 @@ const Ecommerce = () => {
           </div>
 
         </div>
+      </div>
       </div>
     </div>
   )
