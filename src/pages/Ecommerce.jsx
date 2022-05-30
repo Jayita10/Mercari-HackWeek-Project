@@ -18,7 +18,7 @@ const Ecommerce = () => {
   
   return (
     <div className='mt-12'>
-      <div className='m-2 md:m-10 md:p-10 bg-white rounded-3xl'>
+      <div className='m-2 md:m-10 md:p-10 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-3xl'>
         <Header category='Pages/Dashboard' title='Main Dashboard' />
           {/* <p>Quick Overview< BsArrowDownRightCircleFill /></p> */}
           <span className='text-2xl font-semibold flex m-3 flex-wrap justify-between'> 
@@ -120,7 +120,7 @@ const Ecommerce = () => {
               <div className="mt-8">
                 <p className="text-3xl font-semibold">¥40,354</p>
 
-                <p className="text-gray-500 mt-1">MerPay Account Balance</p>
+                <p className="text-gray-500 mt-1">Account Balance</p>
               </div>
 
               <div className="mt-5">

@@ -2,10 +2,10 @@ import React from 'react';
 import { AiOutlineUser, AiOutlineReconciliation, AiOutlineHome, AiOutlineBarChart, AiOutlineLogout } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import {  BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsEmojiLaughing, BsFillEyeFill , BsFillStarFill, BsFillEmojiAngryFill, BsFillEmojiNeutralFill, BsFillEmojiSmileFill, BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill } from 'react-icons/bs';
-import { BiColorFill, BiLike  } from 'react-icons/bi';
+import { BiColorFill, BiLike, BiDislike  } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount, MdOutlineAttachMoney, MdAccountBalanceWallet, MdAssignment, MdAssignmentTurnedIn} from 'react-icons/md';
+import { MdOutlineSupervisorAccount, MdAccountBalance, MdOutlineAttachMoney, MdAccountBalanceWallet, MdAssignment, MdAssignmentTurnedIn} from 'react-icons/md';
 
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
@@ -79,6 +79,25 @@ const gridEmployeeCountry = (props) => (
     <span>{props.Country}</span>
   </div>
 );
+
+const gridBuyerReaction = (props) => (
+  <div>
+    <button type='button' style={{ color: '#663399', backgroundColor: '#d5b8ff'}} className='text-2xl opacity=0.9 rounded-full p-4 hover:drop-shadow-xl'>
+          {props.Reaction}
+    </button>
+  </div>
+);
+
+const gridBuyerImage = (props) => (
+  <div className="flex items-center gap-2">
+    <img
+      className="rounded-full w-10 h-10"
+      src={props.BuyerImage}
+      alt="buyer"
+    />
+  </div>
+);
+
 export const EditorData = () => (
   <div>
     <h3>
@@ -243,19 +262,19 @@ export const areaCustomSeries = [
 
 export const barChartData = [
   [
-    { x: 'Jan', y: 46 },
-    { x: 'Feb', y: 27 },
-    { x: 'Mar', y: 26 },
+    { x: 'Jan', y: 45 },
+    { x: 'Feb', y: 47 },
+    { x: 'Mar', y: 36 },
   ],
   [
-    { x: 'Jan', y: 37 },
-    { x: 'Feb', y: 23 },
-    { x: 'Mar', y: 18 },
+    { x: 'Jan', y: 25 },
+    { x: 'Feb', y: 33 },
+    { x: 'Mar', y: 28 },
   ],
   [
-    { x: 'Jan', y: 38 },
-    { x: 'Feb', y: 17 },
-    { x: 'Mar', y: 26 },
+    { x: 'Jan', y: 30 },
+    { x: 'Feb', y: 20 },
+    { x: 'Mar', y: 36 },
   ],
 ];
 
@@ -435,28 +454,36 @@ export const customersGrid = [
 ];
 export const buyerReviewsGrid = [
   { field: 'BuyerID',
-    headerText: 'BuyerID',
-    width: '125',
+    headerText: 'Buyer ID',
+    width: '115',
     textAlign: 'Center' },
+    {
+      headerText: 'Image',
+      width: '150',
+      template: gridBuyerImage,
+      textAlign: 'Left'
+    },
   { field: 'Name',
     headerText: 'Name',
-    width: '0',
+    width: '125',
     textAlign: 'Center',
   },
   { field: 'ItemID',
-    headerText: 'Item-ID',
+    headerText: 'Item ID',
     width: '170',
     textAlign: 'Center',
   },
   { field: 'Ratings',
     headerText: 'Ratings',
     width: '135',
-    format: 'yMd',
     textAlign: 'Center' },
-  { field: 'Reaction',
+  { 
+
     headerText: 'Reactions',
+    template: gridBuyerReaction,
+    textAlign: 'Center',
     width: '120',
-    textAlign: 'Center' },
+ },
 ];
 
 export const employeesGrid = [
@@ -513,6 +540,10 @@ export const links = [
       {
         name: 'BuyerReviews',
         icon: <AiOutlineUser />,
+      },
+      {
+        name: 'MerpayAccount',
+        icon: <MdAccountBalance />,
       },
       {
         name: 'Logout',
@@ -580,10 +611,10 @@ export const chatData = [
 export const earningData = [
   {
     icon: <AiOutlineUser />,
-
-    amount: '15',
+    
+    amount: '60',
     percentage: '-4%',
-    ItemID: 'Total Customers',
+    title: 'Total Buyers',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
@@ -593,16 +624,16 @@ export const earningData = [
 
     amount: '¥4,396',
     percentage: '+23%',
-    ItemID: 'Profit',
+    title: 'Profit',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
   },
   {
     icon: <MdAssignment />,
-    amount: '100',
+    amount: '45',
     percentage: '+38%',
-    ItemID: 'Item Listed',
+    title: 'Item Listed',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
 
@@ -612,7 +643,7 @@ export const earningData = [
     icon: <MdAssignmentTurnedIn />,
     amount: '15',
     percentage: '-12%',
-    ItemID: 'Items sold',
+    title:'Items sold',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -622,40 +653,41 @@ export const earningData = [
 export const performance = [
   {
     icon: <BsFillEyeFill />,
-    amount: '430',
+    amount: '630',
     percentage: '+15%',
-    ItemID: 'Product Views/Day',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
+    title: 'Product Views/Day',
+    iconColor: '#03C9D7',
+    iconBg: '#E5FAFB',
     pcColor: 'green-600',
   },
   {
     icon: <BiLike />,
     amount: '59',
     percentage: '-17%',
-    ItemID: 'Product Likes/Day',
+    title: 'Average Likes/Day',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
+  },
+  {
+    icon: <BiDislike />,
+    amount: '155',
+    percentage: '-12%',
+    title: 'Average Dislikes/Day',
+    iconColor: 'rgb(228, 106, 118)',
+    iconBg: 'rgb(255, 244, 229)',
     pcColor: 'red-600',
   },
   {
     icon: <BsEmojiLaughing />,
-    amount: '5880',
+    amount: '580',
     percentage: '+7%',
-    ItemID: 'Impressions/Day',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
+    title: 'Impressions/Day',
+    iconColor: 'rgb(255, 244, 229)',
+    iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
   },
-  {
-    icon: <BsFillStarFill />,
-    amount: '155',
-    percentage: '-12%',
-    ItemID: 'Ratings',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
-  },
+  
 ];
 
 export const recentTransactions = [
@@ -1483,6 +1515,7 @@ export const customerData = [
 export const buyerReviewsData = [
   {
     BuyerID: 1,
+    BuyerImage: avatar,
     Name: 'Nancy Davolio',
     ItemID: 156324,
     Ratings: 5,
@@ -1490,6 +1523,7 @@ export const buyerReviewsData = [
   },
   {
     BuyerID: 2,
+    BuyerImage: avatar2,
     Name: 'Nasimiyu Danai',
     ItemID: 45126,
     Ratings: 4,
@@ -1498,6 +1532,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 3,
     Name: 'Iulia Albu',
+    BuyerImage: avatar3,
     ItemID: 16429,
     Ratings: 2,
     Reaction: <BsFillEmojiFrownFill />,
@@ -1505,6 +1540,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 4,
     Name: 'Siegbert Gottfried',
+    BuyerImage: avatar4,
     ItemID: 65234,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
@@ -1512,6 +1548,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 5,
     Name: 'Omar Darobe',
+    BuyerImage: avatar,
     ItemID: 96234,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
@@ -1519,6 +1556,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 6,
     Name: 'Penjani Inyene',
+    BuyerImage: avatar2,
     ItemID: 63245,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
@@ -1526,6 +1564,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 7,
     Name: 'Miron Vitold',
+    BuyerImage: avatar3,
     ItemID: 74563,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
@@ -1533,6 +1572,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 8,
     Name: 'Nancy Davolio',
+    BuyerImage: avatar4,
     ItemID: 95482,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
@@ -1540,6 +1580,7 @@ export const buyerReviewsData = [
   {
     BuyerID: 9,
     Name: 'Nasimiyu Danai',
+    BuyerImage: avatar,
     ItemID: 45123,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
@@ -1547,356 +1588,407 @@ export const buyerReviewsData = [
   {
     BuyerID: 10,
     Name: 'Iulia Albu',
+    BuyerImage: avatar2,
     ItemID: 12934,
     Ratings: 1,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 1,
+    BuyerID: 11,
+    BuyerImage: avatar,
     Name: 'Nancy Davolio',
     ItemID: 156324,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 2,
+    BuyerID: 12,
+    BuyerImage: avatar2,
     Name: 'Nasimiyu Danai',
     ItemID: 45126,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 3,
+    BuyerID: 13,
     Name: 'Iulia Albu',
+    BuyerImage: avatar3,
     ItemID: 16429,
     Ratings: 2,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 4,
+    BuyerID: 14,
     Name: 'Siegbert Gottfried',
+    BuyerImage: avatar4,
     ItemID: 65234,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 5,
+    BuyerID: 15,
     Name: 'Omar Darobe',
+    BuyerImage: avatar,
     ItemID: 96234,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 6,
+    BuyerID: 16,
     Name: 'Penjani Inyene',
+    BuyerImage: avatar2,
     ItemID: 63245,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 7,
+    BuyerID: 17,
     Name: 'Miron Vitold',
+    BuyerImage: avatar3,
     ItemID: 74563,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 8,
+    BuyerID: 18,
     Name: 'Nancy Davolio',
+    BuyerImage: avatar4,
     ItemID: 95482,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 9,
+    BuyerID: 19,
     Name: 'Nasimiyu Danai',
+    BuyerImage: avatar,
     ItemID: 45123,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 10,
+    BuyerID: 20,
     Name: 'Iulia Albu',
+    BuyerImage: avatar2,
     ItemID: 12934,
     Ratings: 1,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 1,
+    BuyerID: 21,
+    BuyerImage: avatar,
     Name: 'Nancy Davolio',
     ItemID: 156324,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 2,
+    BuyerID: 22,
+    BuyerImage: avatar2,
     Name: 'Nasimiyu Danai',
     ItemID: 45126,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 3,
+    BuyerID: 23,
     Name: 'Iulia Albu',
+    BuyerImage: avatar3,
     ItemID: 16429,
     Ratings: 2,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 4,
+    BuyerID: 24,
     Name: 'Siegbert Gottfried',
+    BuyerImage: avatar4,
     ItemID: 65234,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 5,
+    BuyerID: 25,
     Name: 'Omar Darobe',
+    BuyerImage: avatar,
     ItemID: 96234,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 6,
+    BuyerID: 26,
     Name: 'Penjani Inyene',
+    BuyerImage: avatar2,
     ItemID: 63245,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 7,
+    BuyerID: 27,
     Name: 'Miron Vitold',
+    BuyerImage: avatar3,
     ItemID: 74563,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 8,
+    BuyerID: 28,
     Name: 'Nancy Davolio',
+    BuyerImage: avatar4,
     ItemID: 95482,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 9,
+    BuyerID: 29,
     Name: 'Nasimiyu Danai',
+    BuyerImage: avatar,
     ItemID: 45123,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 10,
+    BuyerID: 30,
     Name: 'Iulia Albu',
+    BuyerImage: avatar2,
     ItemID: 12934,
     Ratings: 1,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 1,
+    BuyerID: 31,
+    BuyerImage: avatar,
     Name: 'Nancy Davolio',
     ItemID: 156324,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 2,
+    BuyerID: 32,
+    BuyerImage: avatar2,
     Name: 'Nasimiyu Danai',
     ItemID: 45126,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 3,
+    BuyerID: 33,
     Name: 'Iulia Albu',
+    BuyerImage: avatar3,
     ItemID: 16429,
     Ratings: 2,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 4,
+    BuyerID: 34,
     Name: 'Siegbert Gottfried',
+    BuyerImage: avatar4,
     ItemID: 65234,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 5,
+    BuyerID: 35,
     Name: 'Omar Darobe',
+    BuyerImage: avatar,
     ItemID: 96234,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 6,
+    BuyerID: 36,
     Name: 'Penjani Inyene',
+    BuyerImage: avatar2,
     ItemID: 63245,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 7,
+    BuyerID: 37,
     Name: 'Miron Vitold',
+    BuyerImage: avatar3,
     ItemID: 74563,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 8,
+    BuyerID: 38,
     Name: 'Nancy Davolio',
+    BuyerImage: avatar4,
     ItemID: 95482,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 9,
+    BuyerID: 39,
     Name: 'Nasimiyu Danai',
+    BuyerImage: avatar,
     ItemID: 45123,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 10,
+    BuyerID: 40,
     Name: 'Iulia Albu',
+    BuyerImage: avatar2,
     ItemID: 12934,
     Ratings: 1,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 1,
+    BuyerID: 41,
+    BuyerImage: avatar,
     Name: 'Nancy Davolio',
     ItemID: 156324,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 2,
+    BuyerID: 42,
+    BuyerImage: avatar2,
     Name: 'Nasimiyu Danai',
     ItemID: 45126,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 3,
+    BuyerID: 43,
     Name: 'Iulia Albu',
+    BuyerImage: avatar3,
     ItemID: 16429,
     Ratings: 2,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 4,
+    BuyerID: 44,
     Name: 'Siegbert Gottfried',
+    BuyerImage: avatar4,
     ItemID: 65234,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 5,
+    BuyerID: 45,
     Name: 'Omar Darobe',
+    BuyerImage: avatar,
     ItemID: 96234,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 6,
+    BuyerID: 46,
     Name: 'Penjani Inyene',
+    BuyerImage: avatar2,
     ItemID: 63245,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 7,
+    BuyerID: 47,
     Name: 'Miron Vitold',
+    BuyerImage: avatar3,
     ItemID: 74563,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 8,
+    BuyerID: 48,
     Name: 'Nancy Davolio',
+    BuyerImage: avatar4,
     ItemID: 95482,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 9,
+    BuyerID: 49,
     Name: 'Nasimiyu Danai',
+    BuyerImage: avatar,
     ItemID: 45123,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 10,
+    BuyerID: 50,
     Name: 'Iulia Albu',
+    BuyerImage: avatar2,
     ItemID: 12934,
     Ratings: 1,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 1,
+    BuyerID: 51,
+    BuyerImage: avatar,
     Name: 'Nancy Davolio',
     ItemID: 156324,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 2,
+    BuyerID: 52,
+    BuyerImage: avatar2,
     Name: 'Nasimiyu Danai',
     ItemID: 45126,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 3,
+    BuyerID: 53,
     Name: 'Iulia Albu',
+    BuyerImage: avatar3,
     ItemID: 16429,
     Ratings: 2,
     Reaction: <BsFillEmojiFrownFill />,
   },
   {
-    BuyerID: 4,
+    BuyerID: 54,
     Name: 'Siegbert Gottfried',
+    BuyerImage: avatar4,
     ItemID: 65234,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 5,
+    BuyerID: 55,
     Name: 'Omar Darobe',
+    BuyerImage: avatar,
     ItemID: 96234,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 6,
+    BuyerID: 56,
     Name: 'Penjani Inyene',
+    BuyerImage: avatar2,
     ItemID: 63245,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 7,
+    BuyerID: 57,
     Name: 'Miron Vitold',
+    BuyerImage: avatar3,
     ItemID: 74563,
     Ratings: 5,
     Reaction: <BsFillEmojiHeartEyesFill />,
   },
   {
-    BuyerID: 8,
+    BuyerID: 58,
     Name: 'Nancy Davolio',
+    BuyerImage: avatar4,
     ItemID: 95482,
     Ratings: 4,
     Reaction: <BsFillEmojiSmileFill />,
   },
   {
-    BuyerID: 9,
+    BuyerID: 59,
     Name: 'Nasimiyu Danai',
+    BuyerImage: avatar,
     ItemID: 45123,
     Ratings: 3,
     Reaction: <BsFillEmojiNeutralFill />,
   },
   {
-    BuyerID: 10,
+    BuyerID: 60,
     Name: 'Iulia Albu',
+    BuyerImage: avatar2,
     ItemID: 12934,
     Ratings: 1,
     Reaction: <BsFillEmojiFrownFill />,
@@ -3236,11 +3328,11 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 1, yval: 20 },
-  { x: 2, yval: 60 },
-  { x: 3, yval: 80 },
-  { x: 4, yval: 50 },
-  { x: 5, yval: 100 },
+  { x: 1, yval: 200 },
+  { x: 2, yval: 600 },
+  { x: 3, yval: 800 },
+  { x: 4, yval: 500 },
+  { x: 5, yval: 1000 },
 
 ];
 

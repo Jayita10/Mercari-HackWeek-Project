@@ -9,3 +9,4 @@ export { default as Pie } from './Charts/Pie';
 export { default as MainDashboard } from './MainDashboard';
 export { default as Listings } from './Listings';
 export { default as BuyerReview } from './BuyerReview';
+export { default as Logout } from './Logout';
