@@ -61,7 +61,7 @@ const App = () => {
                         <Route path='/Listings' element={<Orders />} />
                         <Route path='/Analysis' element={<Line />} />
                         <Route path='/BuyerReview' element={<BuyerReview />} />
-                        <Route path='/Logout' element={'Logout'}/>
+                        <Route path='/Logout' element={<MainDashboard />}/>
                     </Routes>
                 </div>
                 <Footer />
