@@ -3,11 +3,15 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, width }) => {
   const { setIsClicked, initialState } = useStateContext();
-
+  
+    function AlertMessage() {
+      alert('Download Successful!');
+    }
   return (
     <button
       type="button"
-      onClick={() => setIsClicked(initialState)}
+      // onClick={() => setIsClicked(initialState)}
+      onClick={AlertMessage}
       style={{ backgroundColor: bgColor, color, borderRadius }}
       className={` text-${size} p-3 w-${width} hover:drop-shadow-xl hover:bg-${bgHoverColor}`}
     >
