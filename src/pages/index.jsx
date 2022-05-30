@@ -7,6 +7,5 @@ export { default as Calendar } from './Calendar';
 export { default as Line } from './Charts/Line';
 export { default as Pie } from './Charts/Pie';
 export { default as MainDashboard } from './MainDashboard';
-export { default as ItemAnalysis } from './ItemAnalysis';
 export { default as Listings } from './Listings';
 export { default as BuyerReview } from './BuyerReview';

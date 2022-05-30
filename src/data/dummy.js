@@ -475,16 +475,16 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'mainDashboard',
+        name: 'Dashboard',
         icon: < AiOutlineHome />,
-      },
-      {
-        name: 'itemAnalysis',
-        icon: <AiOutlineBarChart />,
       },
       {
         name: 'listings',
         icon: <AiOutlineReconciliation />,
+      },
+      {
+        name: 'item Analysis',
+        icon: <AiOutlineBarChart />,
       },
       {
         name: 'buyerReviews',
