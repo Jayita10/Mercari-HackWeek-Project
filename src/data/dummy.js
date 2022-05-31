@@ -623,7 +623,7 @@ export const earningData = [
   {
     icon: <MdOutlineAttachMoney />,
 
-    amount: '¥4,396',
+    amount: '¥50,396',
     percentage: '+23%',
     title: 'Profit',
     iconColor: 'rgb(255, 244, 229)',
