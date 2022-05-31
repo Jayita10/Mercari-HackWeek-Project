@@ -6,10 +6,10 @@ const Header = ({category, title}) => {
       <p classname="text-gray-400">
         {category}
       </p>
-      <p className='text-3xl font-extrabold tracking-tight text-slate-900'>
+      <p className='text-3xl font-extrabold flex m-3 flex-wrap '>
         {title}
       </p>
-
+      {/* text-2xl font-semibold flex m-3 flex-wrap justify-between */}
     </div>
   )
 }
