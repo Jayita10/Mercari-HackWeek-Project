@@ -1,5 +1,5 @@
 ### - This is our HackWeek project : Mercari Seller Dashboard
-### - Tect Stack used : ReactJS, Tailwind CSS, syncfusion UI, CSV(backend data to fetch listing data). We use hardcoding the data on the frontend due to the time constraint.
+### - Tect Stack used : ReactJS, Tailwind CSS, syncfusion UI, CSV(backend data to fetch listing data). For other pages, We use hardcoding the data on the frontend due to the time constraint.
 
 
 
